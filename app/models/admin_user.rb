@@ -10,4 +10,6 @@ class AdminUser < ApplicationRecord
 
 	validates_presence_of :username, :password, :year, :first_name, :last_name, :section, :roll_number, :email, :user_mobile, :father, :father_occupation, :father_mobile, :mother, :mother_occupation, :mother_mobile, :interests, :goals, :skills, :strengths, :weaknesses
 
+	validates_uniqueness_of :username
+
 end
