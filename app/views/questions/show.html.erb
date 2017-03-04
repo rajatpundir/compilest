@@ -1,5 +1,5 @@
 <div class="center page-header">
-  <h2><%= @question.description %></h2>
+  <h2><%= simple_format(@question.description) %></h2>
 </div>
 <div class="well col-xs-8 col-xs-offset-2">
   <table class="table table-bordered table-striped table-hover table-condensed">
@@ -9,19 +9,19 @@
     </tr>
     <tr>
       <td class="success text-center">Answer</td>
-      <td class="active data"> <%= @question.answer %> </td>
+      <td class="active data"> <%= simple_format(@question.answer) %> </td>
     </tr>
     <tr>
       <td class="success text-center">Choice 1</td>
-      <td class="active data"> <%= @question.one %> </td>
+      <td class="active data"> <%= simple_format(@question.one) %> </td>
     </tr>
     <tr>
       <td class="success text-center">Choice 2</td>
-      <td class="active data"> <%= @question.two %> </td>
+      <td class="active data"> <%= simple_format(@question.two) %> </td>
     </tr>
     <tr>
       <td class="success text-center">Choice 3</td>
-      <td class="active data"> <%= @question.three %> </td>
+      <td class="active data"> <%= simple_format(@question.three) %> </td>
     </tr>
   </table>
 </div>
