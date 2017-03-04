@@ -17,6 +17,18 @@ class AdminUsersController < ApplicationController
 
 	def create
 		@admin_user = AdminUser.new(admin_user_params)
+		@admin_user.user_mobile = "NA"
+		@admin_user.father = "NA"
+		@admin_user.father_occupation = "NA"
+		@admin_user.father_mobile = "NA"
+		@admin_user.mother = "NA"
+		@admin_user.mother_occupation = "NA"
+		@admin_user.mother_mobile = "NA"
+		@admin_user.interests = "NA"
+		@admin_user.goals = "NA"
+		@admin_user.skills = "NA"
+		@admin_user.strengths = "NA"
+		@admin_user.weaknesses = "NA"
 		if @admin_user.save
 			flash[:success] = 'User created successfully.'
 			redirect_to(admin_users_path)

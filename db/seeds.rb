@@ -15,7 +15,7 @@ AdminUser.create(
 	:section => "section",
 	:roll_number => 9999,
 	:year => 9999,
-	:email => "xyz@mail.com",
+	:email => "xyz",
 	:user_mobile => "user_mobile",
 	:father => "father_name",
 	:father_occupation => "father_occupation",

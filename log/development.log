@@ -35254,3 +35254,769 @@ Processing by AdminUsersController#index as HTML
 Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2017-03-04 20:00:46 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessController#menu as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 37ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:00:47 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (2.7ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 327ms (Views: 325.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2017-03-04 20:00:57 +0530
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jBIqIaLdjbNSqPTNfhnCGXDucaCyuw08r3J4la6pgRkMHNn8jYfnI3nMFTZ6gF+oKmyKa9DWY0NkVjz+4ssSPw==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 94ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/admin" for ::1 at 2017-03-04 20:00:57 +0530
+Processing by AccessController#menu as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 17ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:00:57 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.6ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:01:04 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (130.9ms)
+  Rendered admin_users/new.html.erb within layouts/application (133.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 189ms (Views: 186.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:01:15 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (4.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 67ms (Views: 63.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/access/logout" for ::1 at 2017-03-04 20:02:36 +0530
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:02:36 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (1.1ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:02:37 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (3.1ms)
+  Rendered admin_users/new.html.erb within layouts/application (5.2ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 76.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin_users" for ::1 at 2017-03-04 20:02:47 +0530
+Processing by AdminUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ofFfbJu2FnThfid62tzD2Kx/4Wa3Isrvv3kLAbxLjYPwhCC55lhirMns8Xg3N+dy8aBfIRTVBQ1iBK+C7yqvBA==", "admin_user"=>{"year"=>"654", "first_name"=>"654", "last_name"=>"654", "section"=>"654", "roll_number"=>"654", "email"=>"654", "username"=>"65", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "admin_users" ("year", "first_name", "last_name", "section", "roll_number", "email", "user_mobile", "father", "father_occupation", "father_mobile", "mother", "mother_occupation", "mother_mobile", "interests", "goals", "skills", "strengths", "weaknesses", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["year", 654], ["first_name", "654"], ["last_name", "654"], ["section", "654"], ["roll_number", 654], ["email", "654"], ["user_mobile", "NA"], ["father", "NA"], ["father_occupation", "NA"], ["father_mobile", "NA"], ["mother", "NA"], ["mother_occupation", "NA"], ["mother_mobile", "NA"], ["interests", "NA"], ["goals", "NA"], ["skills", "NA"], ["strengths", "NA"], ["weaknesses", "NA"], ["username", "65"], ["password_digest", "$2a$10$IMBmmDEqIj0nI8yp4Jg72ehCkNySASgKIHx355aBYfZNZEXHpRrtq"], ["created_at", 2017-03-04 14:32:47 UTC], ["updated_at", 2017-03-04 14:32:47 UTC]]
+  [1m[35m (165.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 252ms (ActiveRecord: 166.3ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:02:48 +0530
+Processing by AdminUsersController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:02:48 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (2.0ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2017-03-04 20:02:52 +0530
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S11XnTnlN+35jAVuqzORKhHLyFEsyILbODUbDqHTOLLLU6RAFr9dfdLo5JWvqgybS0kzmk6l7KTzEV9l7bGrlA==", "username"=>"65", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "65"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/exams/3/edit
+Completed 302 Found in 84ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/exams/3/edit" for ::1 at 2017-03-04 20:02:52 +0530
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering exams/edit.html.erb within layouts/application
+  Rendered exams/edit.html.erb within layouts/application (0.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "65"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/exams" for ::1 at 2017-03-04 20:02:54 +0530
+Processing by ExamsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "questions"."id" FROM "questions"[0m
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "admin_users" SET "created_at" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["created_at", 2017-03-04 14:32:54 UTC], ["updated_at", 2017-03-04 14:32:54 UTC], ["id", 3]]
+  [1m[35m (235.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "admin_users" SET "score" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["score", 0], ["updated_at", 2017-03-04 14:32:55 UTC], ["id", 3]]
+  [1m[35m (130.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "admin_users" SET "answered" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["answered", "2 "], ["updated_at", 2017-03-04 14:32:55 UTC], ["id", 3]]
+  [1m[35m (74.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering exams/index.html.erb within layouts/application
+  Rendered exams/index.html.erb within layouts/application (22.8ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "65"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 546ms (Views: 71.7ms | ActiveRecord: 444.5ms)
+
+
+Started GET "/access/logout" for ::1 at 2017-03-04 20:02:57 +0530
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:02:57 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (1.0ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2017-03-04 20:04:03 +0530
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PMdZdEsFIlFLZ2nG5AOuDsmjqo1d8KH32KNZDZxK5Ist9aR0MpCs9+WBvnkq4ogt9sXjL2Mnx9RRrdPcI7UiyA==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 80ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2017-03-04 20:04:03 +0530
+Processing by AccessController#menu as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:04:03 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin_users/2" for ::1 at 2017-03-04 20:04:07 +0530
+Processing by AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin_users/show.html.erb within layouts/application
+  Rendered admin_users/show.html.erb within layouts/application (1.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 44.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin_users/2" for ::1 at 2017-03-04 20:04:13 +0530
+Processing by AdminUsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin_users/show.html.erb within layouts/application
+  Rendered admin_users/show.html.erb within layouts/application (1.1ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:04:14 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (12.2ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin_users/3" for ::1 at 2017-03-04 20:04:17 +0530
+Processing by AdminUsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering admin_users/show.html.erb within layouts/application
+  Rendered admin_users/show.html.erb within layouts/application (1.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:04:27 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (5.0ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin_users/reset" for ::1 at 2017-03-04 20:04:30 +0530
+Processing by AdminUsersController#reset as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "admin_users" SET "score" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["score", -1], ["updated_at", 2017-03-04 14:34:30 UTC], ["id", 3]]
+  [1m[35m (190.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "admin_users" SET "answered" = ?, "updated_at" = ? WHERE "admin_users"."id" = ?[0m  [["answered", ""], ["updated_at", 2017-03-04 14:34:30 UTC], ["id", 3]]
+  [1m[35m (152.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 354ms (ActiveRecord: 344.9ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:04:30 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.3ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin_users/3/delete" for ::1 at 2017-03-04 20:04:39 +0530
+Processing by AdminUsersController#delete as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering admin_users/delete.html.erb within layouts/application
+  Rendered admin_users/delete.html.erb within layouts/application (1.3ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 58ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/admin_users/3" for ::1 at 2017-03-04 20:04:40 +0530
+Processing by AdminUsersController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aLtw6Lqe0p/V8CZgkNjRJlY7TB8jWLshUAIPWdXJXfPTb72YbtGzkf/Ue56NJkVy1pbxNf5qMZuYYrpyhoj2EA==", "commit"=>"Delete User", "id"=>"3"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "admin_users" WHERE "admin_users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (151.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 156ms (ActiveRecord: 152.2ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:04:40 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.7ms)
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/admin_users/2/delete" for ::1 at 2017-03-04 20:04:43 +0530
+Processing by AdminUsersController#delete as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering admin_users/delete.html.erb within layouts/application
+  Rendered admin_users/delete.html.erb within layouts/application (1.4ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 58.8ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/admin_users/2" for ::1 at 2017-03-04 20:04:44 +0530
+Processing by AdminUsersController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aRirtWpKK7xCMVpIOmVj9+oyYuzibDPRbdLpSVzGAc8fzHtA9xYILOYI1oluL0l+A+Mp2ZjLxHTKD8jkRiniIQ==", "commit"=>"Delete User", "id"=>"2"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "admin_users" WHERE "admin_users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (231.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 235ms (ActiveRecord: 232.2ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:04:44 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.6ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/access/logout" for ::1 at 2017-03-04 20:05:11 +0530
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:05:11 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (1.2ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:05:13 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (4.3ms)
+  Rendered admin_users/new.html.erb within layouts/application (9.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin_users" for ::1 at 2017-03-04 20:05:21 +0530
+Processing by AdminUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bp1CfWhoBWzGm1HfLSoLsdpOCkexvuj2IY4/gvIBiclX6D2oFYZxtO4Jh93AwS8bh5G0ABJJJxT885sBoWCrTg==", "admin_user"=>{"year"=>"87", "first_name"=>"87", "last_name"=>"87", "section"=>"87", "roll_number"=>"8", "email"=>"78", "username"=>"7", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "admin_users" ("year", "first_name", "last_name", "section", "roll_number", "email", "user_mobile", "father", "father_occupation", "father_mobile", "mother", "mother_occupation", "mother_mobile", "interests", "goals", "skills", "strengths", "weaknesses", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["year", 87], ["first_name", "87"], ["last_name", "87"], ["section", "87"], ["roll_number", 8], ["email", "78"], ["user_mobile", "NA"], ["father", "NA"], ["father_occupation", "NA"], ["father_mobile", "NA"], ["mother", "NA"], ["mother_occupation", "NA"], ["mother_mobile", "NA"], ["interests", "NA"], ["goals", "NA"], ["skills", "NA"], ["strengths", "NA"], ["weaknesses", "NA"], ["username", "7"], ["password_digest", "$2a$10$VeQChzAd98Xn6wJHbLgnRuWiRDkFCpwsiKI3Z/dAYtHL9SZlyBkwG"], ["created_at", 2017-03-04 14:35:21 UTC], ["updated_at", 2017-03-04 14:35:21 UTC]]
+  [1m[35m (140.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 223ms (ActiveRecord: 140.5ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:05:21 +0530
+Processing by AdminUsersController#index as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:05:21 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (3.7ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 124ms (Views: 122.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2017-03-04 20:05:25 +0530
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2L6LbyMXMSkxChXJShCgylM/9cHsWeqVYR+8w84kFFhYsHiyDE1buRpu9DJOiT17Cb0OCo40hOqqO/iogkaHfg==", "username"=>"7", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "7"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/exams/4/edit
+Completed 302 Found in 80ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/exams/4/edit" for ::1 at 2017-03-04 20:05:26 +0530
+Processing by ExamsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering exams/edit.html.erb within layouts/application
+  Rendered exams/edit.html.erb within layouts/application (0.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "7"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/access/logout" for ::1 at 2017-03-04 20:05:29 +0530
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:05:29 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (1.6ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2017-03-04 20:05:34 +0530
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o3Ti3Vg2uKkH0he3V68yQGy+4EmKUKz8cvwThf6QveqyRh/dIaM2D6k0wAiZThRjU9ip67SHyt/78plUQW97qQ==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 79ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/admin" for ::1 at 2017-03-04 20:05:34 +0530
+Processing by AccessController#menu as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:05:34 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.3ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin_users/4/delete" for ::1 at 2017-03-04 20:05:36 +0530
+Processing by AdminUsersController#delete as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering admin_users/delete.html.erb within layouts/application
+  Rendered admin_users/delete.html.erb within layouts/application (1.5ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/admin_users/4" for ::1 at 2017-03-04 20:05:37 +0530
+Processing by AdminUsersController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ttFaOyyxDqf8yTcWohYZ0On0gNds6nEmGM6IIWiPF4haGgf9xMBRnKzOLFq30G3eeZuaNTDxpn+tCi1P1mVvsg==", "commit"=>"Delete User", "id"=>"4"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "admin_users" WHERE "admin_users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (160.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 164ms (ActiveRecord: 160.5ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:05:37 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.4ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:06:27 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (4.1ms)
+  Rendered admin_users/new.html.erb within layouts/application (16.3ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:11:30 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (2.5ms)
+  Rendered admin_users/new.html.erb within layouts/application (4.2ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/questions" for ::1 at 2017-03-04 20:11:38 +0530
+Processing by QuestionsController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" ORDER BY id DESC[0m
+  Rendered questions/index.html.erb within layouts/application (3.3ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:11:40 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (4.0ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 50ms (Views: 46.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/access/logout" for ::1 at 2017-03-04 20:11:45 +0530
+Processing by AccessController#logout as HTML
+Redirected to http://localhost:3000/access/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:11:45 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (1.1ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:11:46 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (3.2ms)
+  Rendered admin_users/new.html.erb within layouts/application (5.0ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-04 20:11:59 +0530
+Processing by AccessController#menu as HTML
+Redirected to http://localhost:3000/access/login
+Filter chain halted as :confirm_logged_in rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/access/login" for ::1 at 2017-03-04 20:11:59 +0530
+Processing by AccessController#login as HTML
+  Rendering access/login.html.erb within layouts/application
+  Rendered access/login.html.erb within layouts/application (2.7ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" IS NULL ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/access/attempt_login" for ::1 at 2017-03-04 20:12:03 +0530
+Processing by AccessController#attempt_login as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c4HfMEyZU68K4bFjJsJehhDViRlNl57YeBWKuTlYqh7zjyztY8M5PyGFUJgiW8M3Sldy0i/68KezMc7SdTo5OA==", "username"=>"admin", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 81ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for ::1 at 2017-03-04 20:12:03 +0530
+Processing by AccessController#menu as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:12:03 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.1ms)
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 44ms (Views: 41.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:13:23 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, email, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (3.1ms)
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 43.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin_users/new" for ::1 at 2017-03-04 20:13:33 +0530
+Processing by AdminUsersController#new as HTML
+  Rendering admin_users/new.html.erb within layouts/application
+  Rendered admin_users/_form.html.erb (7.2ms)
+  Rendered admin_users/new.html.erb within layouts/application (10.4ms)
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 86ms (Views: 84.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/admin_users" for ::1 at 2017-03-04 20:13:39 +0530
+Processing by AdminUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZK2mVj561Gumm57inHXmxdxxDEIFKhjGTeZz49C0luk12NmDQ5Sgs44JSOBxnsJvga6yBabd1ySQm9dgg9W0bg==", "admin_user"=>{"year"=>"76", "first_name"=>"978", "last_name"=>"78", "section"=>"78", "roll_number"=>"77", "email"=>"87", "username"=>"87", "password"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "admin_users" ("year", "first_name", "last_name", "section", "roll_number", "email", "user_mobile", "father", "father_occupation", "father_mobile", "mother", "mother_occupation", "mother_mobile", "interests", "goals", "skills", "strengths", "weaknesses", "username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["year", 76], ["first_name", "978"], ["last_name", "78"], ["section", "78"], ["roll_number", 77], ["email", "87"], ["user_mobile", "NA"], ["father", "NA"], ["father_occupation", "NA"], ["father_mobile", "NA"], ["mother", "NA"], ["mother_occupation", "NA"], ["mother_mobile", "NA"], ["interests", "NA"], ["goals", "NA"], ["skills", "NA"], ["strengths", "NA"], ["weaknesses", "NA"], ["username", "87"], ["password_digest", "$2a$10$s2GKzfkq7SYEuybQn8o.NebD2LJdvwNtbDPehvPCBzwOvf3PmOg02"], ["created_at", 2017-03-04 14:43:39 UTC], ["updated_at", 2017-03-04 14:43:39 UTC]]
+  [1m[35m (120.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin_users
+Completed 302 Found in 208ms (ActiveRecord: 120.6ms)
+
+
+Started GET "/admin_users" for ::1 at 2017-03-04 20:13:39 +0530
+Processing by AdminUsersController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering admin_users/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  [1m[36mAdminUser Load (0.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" ORDER BY superuser DESC, year DESC,section, email, roll_number, first_name, last_name, username[0m
+  Rendered admin_users/index.html.erb within layouts/application (2.8ms)
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT  "admin_users".* FROM "admin_users" WHERE "admin_users"."username" = ? ORDER BY "admin_users"."id" ASC LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 1.1ms)
+
+

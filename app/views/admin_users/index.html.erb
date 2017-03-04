@@ -11,6 +11,7 @@
   <table class="table table-bordered table-striped table-hover table-condensed">
     <tr>
       <th>Year</th>
+      <th>Branch</th>
       <th>Section</th>
       <th>Roll number</th>
       <th>Name</th>
@@ -21,6 +22,7 @@
     <% @admin_users.each do |admin_user| %>
         <tr>
           <td><%= admin_user.year %></td>
+          <td><%= admin_user.email %></td>
           <td><%= admin_user.section %></td>
           <td><%= admin_user.roll_number %></td>
           <td><%= admin_user.name %></td>
