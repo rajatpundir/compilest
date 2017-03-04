@@ -1,0 +1,12 @@
+<% @page_title = "Create Question" %>
+<div class="center page-header">
+  <h2>Create Question</h2>
+</div>
+	<%= form_for(@question, :url=> questions_path, :method => 'post', :html => {:class => 'form-horizontal', :role => 'form'} ) do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "Create Question", class: 'btn btn-primary btn-lg' %>
+      </div>
+    </div>
+	<% end %>

@@ -1,0 +1,21 @@
+<% @page_title = "Manage Questions" %>
+<div class="center page-header">
+  <h2>Manage Questions</h2>
+  <%= link_to "Add new Question", new_question_path, :class => 'btn btn-primary' %>
+</div>
+<div class="col-xs-8 col-xs-offset-2 well well-lg">
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <% @questions.each do |question| %>
+        <tr>
+          <td>Question ID: <%= question.id %></td>
+          <td>
+            <div >
+            <%= link_to("Show", question_path(question), :class => 'btn btn-info') %>
+            <%= link_to("Edit", edit_question_path(question), :class => 'btn btn-info') %>
+            <%= link_to("Delete", delete_question_path(question), :class => 'btn btn-danger') %>
+            </div>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>

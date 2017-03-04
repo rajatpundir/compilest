@@ -1,0 +1,84 @@
+<% @page_title = @admin_user.name%>
+<div class="center page-header">
+  <h2>Details of [<%= @admin_user.username %>]</h2>
+</div>
+<div class="well col-xs-8 col-xs-offset-2">
+	<table class="table table-bordered table-striped table-hover table-condensed">
+		<tr>
+			<td class="active data">Name</td>
+			<td class="info text-center object-code"> <%= @admin_user.name %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Section</td>
+			<td class="info text-center object-code"> <%= @admin_user.section %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Roll number</td>
+			<td class="info text-center object-code"> <%= @admin_user.roll_number %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Year</td>
+			<td class="info text-center object-code"> <%= @admin_user.year %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Email</td>
+			<td class="info text-center object-code"> <%= mail_to(@admin_user.email) %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Contact number</td>
+			<td class="info text-center object-code"> <%= @admin_user.user_mobile %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Father's Name</td>
+			<td class="info text-center object-code"> <%= @admin_user.father %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Father's Occupation</td>
+			<td class="info text-center object-code"> <%= @admin_user.father_occupation %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Father's Contact number</td>
+			<td class="info text-center object-code"> <%= @admin_user.father_mobile %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Mother's Name</td>
+			<td class="info text-center object-code"> <%= @admin_user.mother %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Mother's Occupation</td>
+			<td class="info text-center object-code"> <%= @admin_user.mother_occupation %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Mother's Contact number</td>
+			<td class="info text-center object-code"> <%= @admin_user.mother_mobile %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Interests</td>
+			<td class="info text-center object-code"> <%= @admin_user.interests %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Goals</td>
+			<td class="info text-center object-code"> <%= @admin_user.goals %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Skills</td>
+			<td class="info text-center object-code"> <%= @admin_user.skills %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Strengths</td>
+			<td class="info text-center object-code"> <%= @admin_user.strengths %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Weaknesses</td>
+			<td class="info text-center object-code"> <%= @admin_user.weaknesses %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Username</td>
+			<td class="info text-center object-code"> <%= @admin_user.username %> </td>
+		</tr>
+		<tr>
+			<td class="active data">Score</td>
+			<td class="info text-center object-code"> <%= @admin_user.score %> </td>
+		</tr>
+	</table>
+</div>

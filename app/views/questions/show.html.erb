@@ -1,0 +1,27 @@
+<div class="center page-header">
+  <h2><%= @question.description %></h2>
+</div>
+<div class="well col-xs-8 col-xs-offset-2">
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <tr>
+      <td class="success text-center">Question ID</td>
+      <td class="active data"> <%= @question.id %> </td>
+    </tr>
+    <tr>
+      <td class="success text-center">Answer</td>
+      <td class="active data"> <%= @question.answer %> </td>
+    </tr>
+    <tr>
+      <td class="success text-center">Choice 1</td>
+      <td class="active data"> <%= @question.one %> </td>
+    </tr>
+    <tr>
+      <td class="success text-center">Choice 2</td>
+      <td class="active data"> <%= @question.two %> </td>
+    </tr>
+    <tr>
+      <td class="success text-center">Choice 3</td>
+      <td class="active data"> <%= @question.three %> </td>
+    </tr>
+  </table>
+</div>

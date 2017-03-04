@@ -1,0 +1,25 @@
+<% @page_title = "Test Centre" %>
+<div class="center page-header">
+	<h2><%= simple_format(@question.description) %></h2>
+</div>
+<div class="center well col-xs-6 col-xs-offset-3">
+	<%= form_tag '/exams/show', :method => 'get', class: 'form-horizontal', role: 'form' do %>
+		<%= hidden_field_tag :question_id, @question.id %>
+		<% a = [] %>
+		<%  a[0] = @question.answer %>
+		<%  a[1] = @question.one %>
+		<%  a[2] = @question.two %>
+		<%  a[3] = @question.three %>
+		<%  for i in 0...4 do %>
+			<% j = rand(0...4) %>
+			<% a[i],a[j] = a[j],a[i] %>
+		<%  end %>
+		<%= radio_button_tag :answer, a[0], autofocus: true %><%= simple_format(a[0]) %><br>
+		<%= radio_button_tag :answer, a[1] %><%= simple_format(a[1]) %><br>
+		<%= radio_button_tag :answer, a[2] %><%= simple_format(a[2]) %><br>
+		<%= radio_button_tag :answer, a[3] %><%= simple_format(a[3]) %><br>
+		<div id="margiretta">
+			<%= submit_tag "Next", class: 'btn btn-primary btn-lg' %>
+		</div>
+	<% end %>
+</div>
