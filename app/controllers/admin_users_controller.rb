@@ -1,7 +1,8 @@
 class AdminUsersController < ApplicationController
 
 	before_action :confirm_logged_in, :except => [:new, :create]
-	before_action :is_superuser, :except => [:new, :create]
+	before_action :is_superuser
+	# , :except => [:new, :create]
 
 	def index
 		@admin_users = AdminUser.sorted
